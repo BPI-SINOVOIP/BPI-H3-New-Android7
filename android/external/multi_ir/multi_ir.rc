@@ -1,0 +1,4 @@
+service multi_ir /system/bin/multi_ir
+        class main
+        seclabel u:r:multi_ir:s0
+
