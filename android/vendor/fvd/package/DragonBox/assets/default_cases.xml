@@ -1,0 +1,24 @@
+
+<CaseVersion fireware="v2.0" display="sugar_ref001-eng 4.2.2 JDQ39 20140604 test-keys" model="SoftwinerEvb"></CaseVersion>
+<CaseLed></CaseLed>
+<CaseCamera recordtime="5"></CaseCamera>
+<CaseSpdif></CaseSpdif>
+<CaseVideo></CaseVideo>
+<CasePerformance></CasePerformance>
+<CaseUsbVolume num="2"></CaseUsbVolume>
+<CaseSDVolume></CaseSDVolume>
+<CaseEthernet></CaseEthernet>
+<CaseWifi  maxRSSI="-65" wifiSSID="wifiSSID" wifiPWD="password"></CaseWifi>
+<CaseHdmi></CaseHdmi>
+<CaseCvbs></CaseCvbs>
+<CaseMicRecord recordtime="5"></CaseMicRecord>
+<CaseMicRecordGraphic channel="2"></CaseMicRecordGraphic>
+<CaseYSTMicRecord recordtime="5"></CaseYSTMicRecord>
+<CaseYSTMicRecord2 recordtime="5"></CaseYSTMicRecord2>
+<CaseMixPlay></CaseMixPlay>
+<CaseBluetooth></CaseBluetooth>
+<CaseResetKey></CaseResetKey>
+<CaseSpeaker></CaseSpeaker>
+<CaseYSTWifi routerIP="192.168.125.1" apName="AndroidAP" apPSW="qqqqqqqq" apSecurity="WPA2" timeout="25000"></CaseYSTWifi>
+<CaseYSTWan routerIP="192.168.125.1" timeout="15000"></CaseYSTWan>
+<CaseYSTLan lan1IP="192.168.125.10" lan2IP="192.168.125.11" timeout="15000"></CaseYSTLan>

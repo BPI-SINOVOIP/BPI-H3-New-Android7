@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="configuration_item_height">64dp</dimen>
+    <dimen name="video_with">1280dp</dimen>
+    <dimen name="camera_size_width">1536dp</dimen>
+    <dimen name="camera_size_height">864dp</dimen>
+</resources>

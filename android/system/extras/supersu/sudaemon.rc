@@ -1,0 +1,4 @@
+on post-fs-data
+    # Proper devices
+    exec /system/xbin/suinit
+    exec u:r:init:s0 root root -- /system/xbin/su --daemon

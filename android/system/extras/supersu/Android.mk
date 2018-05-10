@@ -1,0 +1,41 @@
+LOCAL_PATH := $(call my-dir)
+
+#The app to control Superuser access
+include $(CLEAR_VARS)
+LOCAL_MODULE_TAGS := eng user userdebug
+LOCAL_MODULE := SuperSU
+LOCAL_CERTIFICATE := platform
+LOCAL_SRC_FILES := Superuser.apk
+LOCAL_PACKAGE_NAME := $(LOCAL_MODULE)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_REQUIRED_MODULES := su libsupol.so suinit
+include $(BUILD_PREBUILT)
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := su
+LOCAL_SRC_FILES := su
+LOCAL_INIT_RC := sudaemon.rc
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/xbin
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := suinit
+LOCAL_SRC_FILES := suinit
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/xbin
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libsupol.so
+LOCAL_SRC_FILES := libsupol.so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/system/lib
+include $(BUILD_PREBUILT)
+
+

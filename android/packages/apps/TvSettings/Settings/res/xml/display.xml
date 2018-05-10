@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/device_display"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="hdmi_outputmode"
+        android:persistent="false"
+        android:title="@string/hdmi_outputmode" />
+    <Preference
+        android:key="screen_margin"
+        android:title="@string/screen_margin" >
+            <intent
+                android:targetClass="com.android.tv.settings.device.display.ScreenMarginActivity"
+                android:targetPackage="com.android.tv.settings" />
+    </Preference>
+
+</PreferenceScreen>

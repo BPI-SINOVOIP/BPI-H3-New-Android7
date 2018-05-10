@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/pip_settings"
+        settings:keywords="@string/pip_settings">
+
+     <ListPreference
+            android:key = "pip_screen_postion_set"
+            android:title = "@string/pip_screen_set_postion_title"
+            android:summary = "@string/pip_screen_set_postion_summary"
+            android:persistent="false"
+             android:entries="@array/pip_screen_set_postion_name"
+            android:entryValues="@array/pip_screen_set_postion_value"/>
+
+     <com.android.settings.pipSettings.PipSizeSetPercentPreference
+            android:key = "tv_screen_percent"
+            android:title = "@string/pip_screen_set_size_title"
+            android:summary = "@string/pip_screen_set_size_summary"/>
+
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="configuration_item_height">32dp</dimen>
+    <dimen name="large_text_size">64sp</dimen>
+    <dimen name="middle_text_size">48sp</dimen>
+    
+    
+    <dimen name="case_item_min_row_padding">0dip</dimen>
+    
+    <dimen name="case_item_normal_height">50dip</dimen>
+    <dimen name="video_with">600dp</dimen>
+    <dimen name="camera_size_width">800dp</dimen>
+    <dimen name="camera_size_height">320dp</dimen>
+</resources>
