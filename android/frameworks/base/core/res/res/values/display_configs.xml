@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* //device/apps/common/assets/res/any/colors.xml
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- @hide 
+         HDMI 480I           400
+         HDMI 576I           401
+         HDMI 480P           402
+         HDMI 576P           403
+         HDMI 720P 50Hz      404
+         HDMI 720P 60Hz      405
+         HDMI 1080I 50Hz     406
+         HDMI 1080I 60Hz     407
+         HDMI 1080P 24Hz     408
+         HDMI 1080P 50Hz     409
+         HDMI 1080P 60Hz     40a
+         PAL                 20b
+         NTSC                20e
+         -->
+    <string-array translatable="false" name="default_display_format">
+        <item>404</item> <!-- HDMI 720P 50Hz -->
+        <item>20b</item> <!-- PAL -->
+    </string-array>
+    
+    <string-array translatable="false" name="default_display_format_names">
+        <item>HDMI 720P 50Hz</item> <!-- HDMI 720P 50Hz -->
+        <item>PAL</item> <!-- PAL -->
+    </string-array>
+    
+    <!-- @hide 
+         LCD  1
+         CVBS 2
+         HDMI 4
+         VGA  8 
+         Format 0x[type][mode], eg. 0x402 means type is 4(HDMI) and mode is 02(480p), All the support format list below. -->
+    <integer translatable="false" name="unsupport_detect_device_type">2</integer>
+    
+    <string-array translatable="false" name="support_tv_format_values">
+        <item>402</item> <!-- HDMI 480P -->
+        <item>403</item> <!-- HDMI 576P -->
+        <item>404</item> <!-- HDMI 720P 50Hz -->
+        <item>405</item> <!-- HDMI 720P 60Hz -->
+        <item>406</item> <!-- HDMI 1080I 50Hz -->
+        <item>407</item> <!-- HDMI 1080I 60Hz -->
+        <item>408</item> <!-- HDMI 1080P 24Hz -->
+        <item>409</item> <!-- HDMI 1080P 50Hz-->
+        <item>40a</item> <!-- HDMI 1080P 60Hz -->
+        <item>20b</item> <!-- PAL -->
+        <item>20e</item> <!-- NTSC -->
+    </string-array>
+    
+    <string-array translatable="false" name="support_tv_format_values_hdmi">
+        <item>404</item> <!-- HDMI 720P 50Hz -->
+        <item>405</item> <!-- HDMI 720P 60Hz -->
+        <item>406</item> <!-- HDMI 1080I 50Hz-->
+        <item>409</item> <!-- HDMI 1080P 50Hz-->
+        <item>407</item> <!-- HDMI 1080I 60Hz-->
+        <item>40a</item> <!-- HDMI 1080P 60Hz -->
+        <item>408</item> <!-- HDMI 1080P 24Hz -->
+        <item>41d</item> <!-- HDMI 4K 25Hz -->
+        <item>41c</item> <!-- HDMI 4K 30Hz -->
+    </string-array>
+
+    <string-array translatable="false" name="support_tv_format_values_hdmi_h2">
+        <item>404</item> <!-- HDMI 720P 50Hz -->
+        <item>405</item> <!-- HDMI 720P 60Hz -->
+        <item>406</item> <!-- HDMI 1080I 50Hz-->
+        <item>409</item> <!-- HDMI 1080P 50Hz-->
+        <item>407</item> <!-- HDMI 1080I 60Hz-->
+        <item>40a</item> <!-- HDMI 1080P 60Hz -->
+        <item>408</item> <!-- HDMI 1080P 24Hz -->
+    </string-array>
+
+    <string-array translatable="false" name="support_tv_format_values_av">
+        <item>20b</item> <!-- PAL -->
+        <item>20e</item> <!-- NTSC -->
+    </string-array>
+    
+    <string-array translatable="false" name="support_tv_format_entries_hdmi">
+        <item>720P_50Hz</item> <!-- HDMI 720P 50Hz -->
+        <item>720P_60HZ</item> <!-- HDMI 720P 60Hz -->
+        <item>1080I_50Hz</item> <!-- HDMI 1080I 50Hz-->
+        <item>1080P_50Hz</item> <!-- HDMI 1080P 50Hz-->
+        <item>1080I_60Hz</item> <!-- HDMI 1080I 60Hz-->
+        <item>1080P_60Hz</item> <!-- HDMI 1080P 60Hz -->
+        <item>1080P_24Hz</item> <!-- HDMI 1080P 24Hz -->
+        <item>4K_25Hz</item> <!-- HDMI 4K 25Hz -->
+        <item>4K_30Hz</item> <!-- HDMI 4K 30Hz -->
+    </string-array>
+
+    <string-array translatable="false" name="support_tv_format_entries_hdmi_h2">
+        <item>720P_50Hz</item> <!-- HDMI 720P 50Hz -->
+        <item>720P_60HZ</item> <!-- HDMI 720P 60Hz -->
+        <item>1080I_50Hz</item> <!-- HDMI 1080I 50Hz-->
+        <item>1080P_50Hz</item> <!-- HDMI 1080P 50Hz-->
+        <item>1080I_60Hz</item> <!-- HDMI 1080I 60Hz-->
+        <item>1080P_60Hz</item> <!-- HDMI 1080P 60Hz -->
+        <item>1080P_24Hz</item> <!-- HDMI 1080P 24Hz -->
+    </string-array>
+    
+    <string-array translatable="false" name="support_tv_format_entries_av">
+        <item>PAL</item> <!-- PAL -->
+        <item>NTSC</item> <!-- NTSC -->
+    </string-array>
+
+    <string-array translatable="false" name="support_tv_format_entries">
+        <item>HDMI 480P</item> <!-- HDMI 480P -->
+        <item>HDMI 576P</item> <!-- HDMI 576P -->
+        <item>HDMI 720P 50Hz</item> <!-- HDMI 720P 50Hz -->
+        <item>HDMI 720P 60Hz</item> <!-- HDMI 720P 60Hz -->
+        <item>HDMI 1080I 50Hz</item> <!-- HDMI 1080I 50Hz -->
+        <item>HDMI 1080I 60Hz</item> <!-- HDMI 1080I 60Hz -->
+        <item>HDMI 1080P 24Hz</item> <!-- HDMI 1080P 24Hz -->
+        <item>HDMI 1080P 50Hz</item> <!-- HDMI 1080P 50Hz-->
+        <item>HDMI 1080P 60Hz</item> <!-- HDMI 1080P 60Hz -->
+        <item>4K 30HZ</item> <!-- HDMI 4K 30HZ-->
+        <item>PAL</item> <!-- PAL -->
+        <item>NTSC</item> <!-- NTSC -->
+    </string-array>
+    
+    <string name="display_device_plugged_in">%1$s has been plugged in.</string>
+    <string name="display_device_plugged_out">%1$s has been plugged out.</string>
+
+    <integer-array translatable="false" name="hotplug_support">
+        <item>0</item> <!-- HDMI  -->
+        <item>0</item> <!-- CVBS -->
+    </integer-array>
+
+    <integer-array translatable="false" name="hotplug_revert_regist">
+        <item>0</item> <!-- none  -->
+        <item>0</item> <!-- none -->
+    </integer-array>
+
+    <string-array translatable="false" name="display2_enhance_mode_names">
+        <item>NORMAL</item>
+        <item>ENHANCE</item>
+        <item>DEMO</item>
+    </string-array>
+
+</resources>

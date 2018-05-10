@@ -1,0 +1,7 @@
+<resources>
+  <java-symbol type="integer" name="config_ledNormalFlicker" />
+  <java-symbol type="bool" name="config_ledStandbyAllOff" />
+  <java-symbol type="bool" name="config_ledShutdownAllOff" />
+  <java-symbol type="array" name="default_display_format_names"/>
+  <java-symbol type="array" name="display2_enhance_mode_names"/>
+</resources>

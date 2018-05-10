@@ -1,0 +1,27 @@
+<resources>
+    <!-- Control whether the normal led flick when ir input.
+            0 - both not flick.
+			1 - standby led flick , normal led not flick.
+			2 - normal led flick , standby led flick.
+			3 - both flick.
+    -->
+    <integer name="config_ledNormalFlicker">2</integer>
+
+    <!-- Control whether all led off when standby.
+            false - not all led off, the standby led on.
+            true - all led off.
+    -->
+    <bool name="config_ledStandbyAllOff">false</bool>
+
+    <!-- Control whether all led off when shutdown.
+            false - not all led off, the standby led on.
+            true -  all led off.
+    -->
+    <bool name="config_ledShutdownAllOff">true</bool>
+
+	<!-- Control the behavior when the user double presses the power button.
+            0 - Nothing
+            1 - Toggle theater mode setting
+            2 - Brightness boost
+    -->
+</resources>
