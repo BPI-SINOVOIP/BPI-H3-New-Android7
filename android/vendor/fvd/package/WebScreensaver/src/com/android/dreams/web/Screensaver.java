@@ -72,10 +72,13 @@ public class Screensaver extends DreamService {
 
         final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String  url;
+		//Justin Porting 20180507 Start
 		if(isNetConntected())
-			url = prefs.getString("url", "http://www.allwinnertech.com/#zh");
+			url = prefs.getString("url", "http://www.banana-pi.org/");
 		else
-            url = prefs.getString("url", "file:///android_asset/index.html");
+                 url = prefs.getString("url", "file:///android_asset/index.html");
+		//Justin Porting 20180507 End
+
         final boolean interactive = prefs.getBoolean("interactive", false);
         Log.v("WebViewDream", String.format("loading %s in %s mode",
                 url, interactive ? "interactive" : "noninteractive"));
