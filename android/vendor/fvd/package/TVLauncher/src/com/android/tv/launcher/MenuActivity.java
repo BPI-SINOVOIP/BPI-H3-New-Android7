@@ -96,7 +96,9 @@ public abstract class MenuActivity extends Activity {
 
     protected void updateBrowseParams() {
         getDateAndTime();
-        mBrowseFragment.setBadgeDrawable(getBadgeImage());
+        //Justin Porting 20180424 Start
+         mBrowseFragment.setBadgeDrawable(getBadgeImage());
+        //Justin Porting 20180424 End
         mBrowseFragment.setHeadersState(BrowseFragment.HEADERS_DISABLED);//ENABLE---按向左键会出现一个菜单
     }
 

@@ -121,8 +121,9 @@ public class MainSettings extends MenuActivity implements OnAccountsUpdateListen
 
     @Override
     protected Drawable getBadgeImage() {
-    	
-        return getResources().getDrawable(R.drawable.aw_logo);//全志的logo
+    	//Justin Porting 20180424 Start
+        return getResources().getDrawable(R.drawable.bpi_logo);//BananaPi logo
+        //Justin Porting 20180424 End
     }
 
     @Override

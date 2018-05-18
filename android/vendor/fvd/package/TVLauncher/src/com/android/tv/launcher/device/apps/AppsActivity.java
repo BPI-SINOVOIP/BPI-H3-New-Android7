@@ -36,7 +36,9 @@ public class AppsActivity extends MenuActivity {
     
     @Override
     protected Drawable getBadgeImage() {
-        return getResources().getDrawable(R.drawable.aw_logo);
+        //Justin Porting 20180424 Start
+        return getResources().getDrawable(R.drawable.bpi_logo);
+        //Justin Porting 20180424 End
     }
     
     @Override
