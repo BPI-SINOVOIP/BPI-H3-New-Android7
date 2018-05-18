@@ -14,10 +14,18 @@
 # limitations under the License.
 #
 
+
+-include hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk
+
+#ap6212a
+WIFI_DRIVER_FW_PATH_STA    := "/system/vendor/modules/fw_bcm43438a1.bin"
+WIFI_DRIVER_FW_PATH_P2P    := "/system/vendor/modules/fw_bcm43438a1_p2p.bin"
+WIFI_DRIVER_FW_PATH_AP     := "/system/vendor/modules/fw_bcm43438a1_apsta.bin"
+
 PRODUCT_COPY_FILES += \
-    hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a0.bin:system/vendor/modules/fw_bcm43438a0.bin \
-    hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a0_apsta.bin:system/vendor/modules/fw_bcm43438a0_apsta.bin \
-    hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a0_p2p.bin:system/vendor/modules/fw_bcm43438a0_p2p.bin \
-    hardware/aw/wlan/firmware/broadcom/ap6212/nvram_ap6212.txt:system/vendor/modules/nvram_ap6212.txt \
-    hardware/aw/wlan/firmware/broadcom/ap6212/bcm43438a0.hcd:system/vendor/modules/ap6212.hcd \
-    hardware/aw/wlan/firmware/broadcom/ap6212/config.txt:system/vendor/modules/config_ap6212.txt
+    hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a1.bin:system/vendor/modules/fw_bcm43438a1.bin \
+     hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a1_apsta.bin:system/vendor/modules/fw_bcm43438a1_apsta.bin \
+     hardware/aw/wlan/firmware/broadcom/ap6212/fw_bcm43438a1_p2p.bin:system/vendor/modules/fw_bcm43438a1_p2p.bin \
+     hardware/aw/wlan/firmware/broadcom/ap6212/bcm43438a1.hcd:system/vendor/modules/ap6212_a1.hcd \
+     hardware/aw/wlan/firmware/broadcom/ap6212/nvram_ap6212a.txt:system/vendor/modules/nvram_ap6212.txt \
+     hardware/aw/wlan/firmware/broadcom/ap6212/config.txt:system/vendor/modules/config_ap6212.txt

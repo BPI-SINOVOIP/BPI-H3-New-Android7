@@ -64,15 +64,6 @@ static const struct wifi_hardware_info wifi_list[] = {
         .fw_path_p2p = "P2P",
     },
     {
-        .device_id   = 0x1d723,
-        .module_name = "rtl8723ds",
-        .driver_name = "8723ds",
-        .vendor_name = "realtek",
-        .fw_path_sta = "STA",
-        .fw_path_ap  = "AP",
-        .fw_path_p2p = "P2P",
-    },
-    {
         .device_id    = 0x08179,
         .module_name  = "rtl8188etv",
         .driver_name  = "8188eu",
@@ -122,9 +113,9 @@ static const struct wifi_hardware_info wifi_list[] = {
         .module_name = "ap6212",
         .driver_name = "bcmdhd",
         .vendor_name = "broadcom",
-        .fw_path_sta = "/system/vendor/modules/fw_bcm43438a0.bin",
-        .fw_path_ap  = "/system/vendor/modules/fw_bcm43438a0_apsta.bin",
-        .fw_path_p2p = "/system/vendor/modules/fw_bcm43438a0_p2p.bin",
+        .fw_path_sta = "/system/vendor/modules/fw_bcm43438a1.bin",
+        .fw_path_ap  = "/system/vendor/modules/fw_bcm43438a1_apsta.bin",
+        .fw_path_p2p = "/system/vendor/modules/fw_bcm43438a1_p2p.bin",
     },
     {
         .device_id   = 0x14356,

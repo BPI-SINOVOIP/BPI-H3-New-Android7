@@ -26,17 +26,15 @@
 	bt:bt {
 	        compatible = "allwinner,sunxi-bt";
 		clocks = <&clk_losc_out>;
-		bt_power = "vcc-wifi";
-		bt_io_regulator = "vcc-wifi-io";
-		bt_rst_n = <&r_pio PM 4 1 0 0 0>;
+		bt_rst_n;
 		status = "okay";
 	};
 
 	btlpm:btlpm {
 	        compatible = "allwinner,sunxi-btlpm";
 		uart_index = <1>;
-		bt_wake = <&r_pio PM 2 1 0 0 1>;
-		bt_hostwake = <&r_pio PM 1 6 0 0 0>;
+		bt_wake;
+		bt_hostwake;
 		status = "okay";
 	};
 
