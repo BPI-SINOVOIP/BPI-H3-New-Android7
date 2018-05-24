@@ -97,10 +97,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     config.disable_bluetooth=false
 
-
+# BPI-M2_Plus & Zero 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=213 \
-    persist.sys.disp_density=213 \
+    ro.sf.lcd_density=160 \
+    persist.sys.disp_density=160 \
     ro.hwc.sysrsl=4 \
     ro.product.first_api_level=24 \
     persist.sys.disp_enhance_mode=1 \
