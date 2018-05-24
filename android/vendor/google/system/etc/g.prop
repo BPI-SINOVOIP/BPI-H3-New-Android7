@@ -1,0 +1,6 @@
+# begin addon properties
+ro.addon.type=gapps
+ro.addon.platform=ng
+ro.addon.version=gapps-700-base-revisited
+ro.addon.minimumversion=7.0.0
+# end addon properties

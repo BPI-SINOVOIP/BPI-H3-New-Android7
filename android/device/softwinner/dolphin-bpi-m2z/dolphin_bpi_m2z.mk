@@ -81,7 +81,8 @@ $(call inherit-product-if-exists, device/softwinner/common/rtkbt/rtkbt.mk)
 PRODUCT_PACKAGE_OVERLAYS := device/softwinner/dolphin-bpi-m2z/overlay \
                            $(DEVICE_PACKAGE_OVERLAYS)
 
-$(call inherit-product-if-exists, vendor/google/products/gms.mk)
+# BPI-M2_Plus & Zero 
+$(call inherit-product-if-exists, vendor/google/products/gms_base.mk)
 # ########## DISPLAY CONFIGS BEGIN #############
 
 #disable rotation
