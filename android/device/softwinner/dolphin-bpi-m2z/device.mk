@@ -34,10 +34,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    hardware/realtek/bluetooth/rtl8723bs/firmware/rtl8723b_config:system/etc/firmware/rtl8723b_config
 
 #PRODUCT_CHARACTERISTICS := tv
-#
+
+#Justin Porting Start
 PRODUCT_PACKAGES += \
 	rild \
     Bluetooth \
+    Launcher2 \
     audio.a2dp.default \
     libkaraokejni \
     libaudutils \
@@ -46,6 +48,8 @@ PRODUCT_PACKAGES += \
     ubootenv \
     USBBT
 #    BLEAutoPair \
+#Justin Porting End
+
 
 PRODUCT_PACKAGES += \
     audio.pt71600_remote.default.so
