@@ -2,11 +2,11 @@
 	
 # miracast
 #common System APK
+#BPI-M2_Plus & Zero 
 PRODUCT_PACKAGES += \
 	TvdFileManager \
 	Camera2 \
 	TvdVideo \
-        TvLauncher \
         WebScreensaver \
 	SettingsAssist \
 	MiracastReceiver \
