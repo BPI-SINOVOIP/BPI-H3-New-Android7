@@ -1,6 +1,11 @@
 # BPI-H3-New-Android7
 BPI-M2-Plus-Zero Android7 (Agents Version)
 ----------
+Notice: Please download this file to the correct path https://drive.google.com/open?id=0B_YnvHgh2rwjaVRrc2VoR0xLTlE
+
+gcc-linaro-5.3.1-2016.05-x86_64_arm-linux-gnueabi.tar.xz ==> /lichee/brandy/toolchain
+
+----------
 1 Build Android BSP
 
  $ cd lichee
