@@ -18,10 +18,11 @@ RECOVERY_PRIVATE_TOOLS += \
 PRODUCT_PACKAGES += \
    multi_ir
 
-PRODUCT_PACKAGES += \
-   DragonSN \
-   DragonAging \
-   DragonBox \
+# BPI-M2_Plus & Zero 
+#PRODUCT_PACKAGES += \
+#   DragonSN \
+#   DragonAging \
+#   DragonBox \
 
 PRODUCT_PACKAGES += \
    libpppoe-jni \
