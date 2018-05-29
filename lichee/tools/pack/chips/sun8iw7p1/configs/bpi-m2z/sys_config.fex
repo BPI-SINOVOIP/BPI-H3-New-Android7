@@ -1042,23 +1042,8 @@ hdmi_used 	= 1
 [s_cir0]
 s_cir0_used         = 1
 ir_used             = 1
-ir_protocol_used    = 0
-ir_power_key_code0  = 0x57
-ir_addr_code0       = 0x9f00
-ir_power_key_code1  = 0x1a
-ir_addr_code1       = 0xfb04
-ir_power_key_code2  = 0x18
-ir_addr_code2       = 0xff00
-ir_power_key_code3  = 0x4d
-ir_addr_code3       = 0xff40
-ir_power_key_code4  = 0x88
-ir_addr_code4       = 0xdd22
-ir_power_key_code5  = 0x0d
-ir_addr_code5       = 0xbc00
-ir_power_key_code6  = 0x0d
-ir_addr_code6       = 0xfc00
-ir_power_key_code7  = 0x46
-ir_addr_code7       = 0x4040
+ir_power_key_code1  = 0x46
+ir_addr_code1       = 0x4040
 
 ;----------------------------------------------------------------------------------
 ;ir tx--- infra remote configuration
