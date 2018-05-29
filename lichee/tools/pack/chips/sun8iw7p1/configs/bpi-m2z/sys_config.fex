@@ -78,8 +78,8 @@ next_work       = 3
 used = 1
 start_type = 1
 irkey_used = 1
-pmukey_used = 0
-pmukey_num = 0
+pmukey_used = 1
+pmukey_num = 3
 led_power = 0
 led_state = 0
 
@@ -851,7 +851,7 @@ usb_serial_number   = "20080411"
 ;--------------------------------
 [usbc1]
 usbc1_used          = 1
-usb_drv_vbus_gpio   = port:PL03<1><0><default><0>
+usb_drv_vbus_gpio   = 
 usb_host_init_state = 1
 usb_wakeup_suspend  = 0
 
@@ -1247,7 +1247,7 @@ tsc_d7				= port:PE11<3><default><default><default>
 ;gpio key
 ;--------------------------------------------------------------------------------
 [gpio_power_key]
-key_used				= 1
+key_used				= 0
 key_io					= port:PL03<6><default><default><0>
 
 ;----------------------------------------------------------------------------------

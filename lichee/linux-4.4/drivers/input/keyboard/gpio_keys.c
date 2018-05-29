@@ -31,6 +31,8 @@
 #include <linux/of_gpio.h>
 #include <linux/of_irq.h>
 #include <linux/spinlock.h>
+#include <linux/sunxi-gpio.h>
+#include <linux/power/scenelock.h>
 
 struct gpio_button_data {
 	const struct gpio_keys_button *button;
@@ -54,6 +56,8 @@ struct gpio_keys_drvdata {
 	struct mutex disable_lock;
 	struct gpio_button_data data[0];
 };
+
+static int power_key_gpio;
 
 /*
  * SYSFS interface for enabling/disabling keys and switches:
@@ -341,14 +345,26 @@ static void gpio_keys_gpio_report_event(struct gpio_button_data *bdata)
 	const struct gpio_keys_button *button = bdata->button;
 	struct input_dev *input = bdata->input;
 	unsigned int type = button->type ?: EV_KEY;
-	int state = gpio_get_value_cansleep(button->gpio);
+	int state;
+
+#if 0
+	state = gpio_get_value_cansleep(button->gpio);
+	state = (state ? 1 : 0) ^ button->active_low;
 
 	if (state < 0) {
 		dev_err(input->dev.parent, "failed to get gpio state\n");
 		return;
 	}
+# else
+	if (!bdata->key_pressed) {
+		state = 1;
+		bdata->key_pressed = true;
+	} else {
+		state = 0;
+		bdata->key_pressed = false;
+	}
+#endif
 
-	state = (state ? 1 : 0) ^ button->active_low;
 	if (type == EV_ABS) {
 		if (state)
 			input_event(input, type, button->code, button->value);
@@ -494,6 +510,7 @@ static int gpio_keys_setup_key(struct platform_device *pdev,
 			bdata->irq = irq;
 		}
 
+		//bdata->software_debounce = button->debounce_interval;
 		INIT_DELAYED_WORK(&bdata->work, gpio_keys_gpio_work_func);
 
 		isr = gpio_keys_gpio_isr;
@@ -630,11 +647,11 @@ gpio_keys_get_devtree_pdata(struct device *dev)
 
 	i = 0;
 	for_each_child_of_node(node, pp) {
-		enum of_gpio_flags flags;
+		struct gpio_config flags;
 
 		button = &pdata->buttons[i++];
 
-		button->gpio = of_get_gpio_flags(pp, 0, &flags);
+		button->gpio = of_get_gpio_flags(pp, 0, (enum of_gpio_flags *)&flags);
 		if (button->gpio < 0) {
 			error = button->gpio;
 			if (error != -ENOENT) {
@@ -645,7 +662,7 @@ gpio_keys_get_devtree_pdata(struct device *dev)
 				return ERR_PTR(error);
 			}
 		} else {
-			button->active_low = flags & OF_GPIO_ACTIVE_LOW;
+			button->active_low = flags.data & OF_GPIO_ACTIVE_LOW;
 		}
 
 		button->irq = irq_of_parse_and_map(pp, 0);
@@ -751,9 +768,13 @@ static int gpio_keys_probe(struct platform_device *pdev)
 	if (pdata->rep)
 		__set_bit(EV_REP, input->evbit);
 
+	__set_bit(EV_KEY, input->evbit);
+
 	for (i = 0; i < pdata->nbuttons; i++) {
 		const struct gpio_keys_button *button = &pdata->buttons[i];
 		struct gpio_button_data *bdata = &ddata->data[i];
+
+		__set_bit(button->code, input->keybit);
 
 		error = gpio_keys_setup_key(pdev, input, bdata, button);
 		if (error)
@@ -761,6 +782,10 @@ static int gpio_keys_probe(struct platform_device *pdev)
 
 		if (button->wakeup)
 			wakeup = 1;
+		if (button->code == KEY_POWER) {
+			power_key_gpio=button->gpio;
+			enable_wakeup_src(CPUS_GPIO_SRC, power_key_gpio);
+		}
 	}
 
 	error = sysfs_create_group(&pdev->dev.kobj, &gpio_keys_attr_group);
@@ -788,6 +813,9 @@ err_remove_group:
 
 static int gpio_keys_remove(struct platform_device *pdev)
 {
+	if (power_key_gpio > 0)
+		disable_wakeup_src(CPUS_GPIO_SRC, power_key_gpio);
+
 	sysfs_remove_group(&pdev->dev.kobj, &gpio_keys_attr_group);
 
 	device_init_wakeup(&pdev->dev, 0);
