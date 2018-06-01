@@ -58,6 +58,7 @@ struct gpio_keys_drvdata {
 };
 
 static int power_key_gpio;
+static int suspend_flag;
 
 /*
  * SYSFS interface for enabling/disabling keys and switches:
@@ -356,6 +357,17 @@ static void gpio_keys_gpio_report_event(struct gpio_button_data *bdata)
 		return;
 	}
 # else
+	if (suspend_flag)
+	{
+		suspend_flag = 2;
+		input_event(input, type, button->code, 1);
+		input_sync(input);
+		input_event(input, type, button->code, 0);
+		input_sync(input);
+		msleep(3000);
+		suspend_flag = 0;
+		return ;
+	}
 	if (!bdata->key_pressed) {
 		state = 1;
 		bdata->key_pressed = true;
@@ -364,7 +376,6 @@ static void gpio_keys_gpio_report_event(struct gpio_button_data *bdata)
 		bdata->key_pressed = false;
 	}
 #endif
-
 	if (type == EV_ABS) {
 		if (state)
 			input_event(input, type, button->code, button->value);
@@ -390,6 +401,9 @@ static irqreturn_t gpio_keys_gpio_isr(int irq, void *dev_id)
 	struct gpio_button_data *bdata = dev_id;
 
 	BUG_ON(irq != bdata->irq);
+
+	if (suspend_flag > 1)
+		return IRQ_HANDLED;
 
 	if (bdata->button->wakeup)
 		pm_stay_awake(bdata->input->dev.parent);
@@ -842,6 +856,7 @@ static int gpio_keys_suspend(struct device *dev)
 			gpio_keys_close(input);
 		mutex_unlock(&input->mutex);
 	}
+	suspend_flag = 1;
 
 	return 0;
 }
@@ -865,11 +880,9 @@ static int gpio_keys_resume(struct device *dev)
 			error = gpio_keys_open(input);
 		mutex_unlock(&input->mutex);
 	}
-
 	if (error)
 		return error;
-
-	gpio_keys_report_state(ddata);
+	//gpio_keys_report_state(ddata);
 	return 0;
 }
 #endif
