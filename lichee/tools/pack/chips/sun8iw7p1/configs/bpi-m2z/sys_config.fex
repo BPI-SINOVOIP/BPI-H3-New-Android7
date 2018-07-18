@@ -1094,33 +1094,33 @@ ir_tx               = port:PH07<2><default><default><default>
 ;
 ;----------------------------------------------------------------------------------
 [dvfs_table]
-pmuic_type = 0
-;pmu_gpio0         = port:PL06<1><1><2><1>
-;pmu_level0        = 11300
-;pmu_level1        = 01100
+pmuic_type = 1
+pmu_gpio0         = port:PL01<1><1><2><1>
+pmu_level0        = 11300
+pmu_level1        = 01100
 ;extremity_freq = 1344000000
-;max_freq = 1008000000
-;min_freq = 480000000
-;boot_freq = 1008000000
-;LV_count = 8
+max_freq = 1200000000
+min_freq = 240000000
+boot_freq = 1008000000
+LV_count = 6
 
-;LV1_freq = 1200000000
-;LV1_volt = 1300
+LV1_freq = 1200000000
+LV1_volt = 1300
 
-;LV2_freq = 1008000000
-;LV2_volt = 1200
+LV2_freq = 1008000000
+LV2_volt = 1300
 
-;LV3_freq = 0
-;LV3_volt = 1100
+LV3_freq = 912000000
+LV3_volt = 1100
 
-;LV4_freq = 0
-;LV4_volt = 1100
+LV4_freq = 648000000
+LV4_volt = 1100
 
-;LV5_freq = 0
-;LV5_volt = 1100
+LV5_freq = 480000000
+LV5_volt = 1100
 
-;LV6_freq = 0
-;LV6_volt = 1100
+LV6_freq = 240000000
+LV6_volt = 1100
 
 ;LV7_freq = 0
 ;LV7_volt = 1100
