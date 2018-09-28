@@ -60,6 +60,7 @@ build_uboot()
 	fi
 	make ${PLATFORM}_config
 	make -j16
+	make spl
 
 	cd - 1>/dev/null
 }

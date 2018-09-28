@@ -38,7 +38,7 @@ void sunxi_serial_init(int uart_port, void *gpio_cfg, int gpio_max)
 	u32 reg, i;
 	u32 uart_clk;
 
-	if ((uart_port < 0) || (uart_port > 0)) {
+	if (uart_port < 0)  {
 		return;
 	}
 	/* reset */
